@@ -1,1 +1,1 @@
-# SEV
+# SEV - Secure E-Voting
