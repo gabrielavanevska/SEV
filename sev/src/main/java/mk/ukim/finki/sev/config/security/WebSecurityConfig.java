@@ -1,10 +1,14 @@
 package mk.ukim.finki.sev.config.security;
 
+import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
+@Configuration
+@EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     private final PasswordEncoder passwordEncoder;
@@ -21,24 +25,24 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
         http.csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/", "/home", "/assets/**", "/register", "/products", "/api/**").permitAll()
+                .antMatchers("/","/css/**","/img/**", "/js/**", "/webfonts/**", "/home", "/assets/**", "/register", "/products", "/api/**", "/auth/login", "/auth/logout").permitAll()
                 .antMatchers("/admin/**").hasRole("ADMIN")
                 .anyRequest()
                 .authenticated()
                 .and()
                 .formLogin()
-                .loginPage("/login").permitAll()
-                .failureUrl("/login?error=BadCredentials")
+                .loginPage("/auth/login").permitAll()
+                .failureUrl("/auth/login?error=BadCredentials")
                 .defaultSuccessUrl("/home", true)
                 .and()
                 .logout()
-                .logoutUrl("/logout")
+                .logoutUrl("/auth/logout")
                 .clearAuthentication(true)
                 .invalidateHttpSession(true)
                 .deleteCookies("JSESSIONID")
-                .logoutSuccessUrl("/login")
-                .and()
-                .exceptionHandling().accessDeniedPage("/access_denied");
+                .logoutSuccessUrl("/auth/login");
+//                .and()
+//                .exceptionHandling().accessDeniedPage("/access_denied");
 
     }
 
