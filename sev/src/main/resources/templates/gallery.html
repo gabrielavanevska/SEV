@@ -36,33 +36,36 @@
               </button>
               <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto mr-0">
-                  <li class="nav-item">
-                    <div class="tm-nav-link-highlight"></div>
-                    <a class="nav-link" href="index.html">Home</a>
-                  </li>
-                  <li class="nav-item">
-                    <div class="tm-nav-link-highlight"></div>
-                    <a class="nav-link" href="about.html"> About</a>
-                  </li>
-                  <li class="nav-item active">
-                    <div class="tm-nav-link-highlight"></div>
-                    <a class="nav-link" href="gallery.html">
-                      Features <span class="sr-only">(current)</span>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <div class="tm-nav-link-highlight"></div>
-                    <a class="nav-link" href="contact.html">Contact</a>
-                  </li>
-
-                  <li class="nav-item">
-                    <div class="tm-nav-link-highlight"></div>
-                    <a class="nav-link" href="login.html">Sign In</a>
-                  </li>
-                  <li class="nav-item">
-                    <div class="tm-nav-link-highlight"></div>
-                    <a class="nav-link" href="signup.html">Sign Up</a>
-                  </li>
+                    <li class="nav-item active">
+                        <div class="tm-nav-link-highlight"></div>
+                        <a class="nav-link" href="/home"
+                        >Home <span class="sr-only">(current)</span></a
+                        >
+                    </li>
+                    <li class="nav-item">
+                        <div class="tm-nav-link-highlight"></div>
+                        <a class="nav-link" href="/about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <div class="tm-nav-link-highlight"></div>
+                        <a class="nav-link" href="/voting">Voting</a>
+                    </li>
+                    <li class="nav-item">
+                        <div class="tm-nav-link-highlight"></div>
+                        <a class="nav-link" href="/contact">Contact</a>
+                    </li>
+                    <li sec:authorize="isAnonymous()" class="nav-item">
+                        <div class="tm-nav-link-highlight"></div>
+                        <a class="nav-link" href="/auth/login">Sign In</a>
+                    </li>
+                    <li sec:authorize="isAnonymous()" class="nav-item">
+                        <div class="tm-nav-link-highlight"></div>
+                        <a class="nav-link" href="/register">Sign Up</a>
+                    </li>
+                    <li sec:authorize="isAuthenticated()" class="nav-item">
+                        <div class="tm-nav-link-highlight"></div>
+                        <span sec:authentication="name"></span>
+                    </li>
                 </ul>
               </div>
             </nav>
@@ -134,7 +137,7 @@
                         <h3>Candidate Profiles</h3>
                         <p>
                             Гласачите имаат можност да прочитаат биографија, визија за кандидатите <br>
-                            <a class="textImage" style="text-decoration: underline" href="features.html" >Learn More</a>
+                            <a class="textImage" style="text-decoration: underline" href="voting.html" >Learn More</a>
                         </p>
                        
                     </div>
