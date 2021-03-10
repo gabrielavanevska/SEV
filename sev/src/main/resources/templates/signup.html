@@ -8,10 +8,10 @@
 
 
     <link rel="stylesheet"  href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" />
-    <link rel="stylesheet" href="css/all.min.css" />
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" href="css/templatemo-style.css" />
-    <link rel="stylesheet" href="css/singUp-login.css" />
+    <link rel="stylesheet" href="/css/all.min.css" />
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/templatemo-style.css" />
+    <link rel="stylesheet" href="/css/singUp-login.css" />
 </head>
 <body>
 <div class="container-fluid">
@@ -76,34 +76,22 @@
             </div>
         </div>
     </div>
-    <form style="border:2px solid #ccc">
+    <form style="border:2px solid #ccc" action="/register" method="POST">
         <div class="container">
             <h1 style="text-align: center">Sign Up</h1>
             <p style="text-align: center">Please fill in this form to create an account.</p>
             <hr>
             <label style="text-align: center"><b>EMBG</b></label>
-            <input type="number" placeholder="Enter EMBG" name="embg" required>
+            <input type="text" placeholder="Enter EMBG" name="embg" required>
 
             <label><b>Name</b></label>
-            <input type="text" placeholder="Enter Name" name="name" required>
+            <input type="text" placeholder="Enter Name" name="firstname" required>
 
             <label><b>Last Name</b></label>
-            <input type="text" placeholder="Enter LastName" name="lastName" required>
-
-            <label><b>City</b></label>
-            <input type="text" placeholder="Enter City" name="city" required>
-
-            <label><b>Address</b></label>
-            <input type="text" placeholder="Enter Address" name="address" required>
-
-            <label><b>Email</b></label>
-            <input type="email" placeholder="Enter Email" name="email" required>
+            <input type="text" placeholder="Enter LastName" name="lastname" required>
 
             <label><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="psw" required>
-
-            <label><b>Repeat Password</b></label>
-            <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+            <input type="password" placeholder="Enter Password" name="password" required>
 
 
             <div class="clearfix">
