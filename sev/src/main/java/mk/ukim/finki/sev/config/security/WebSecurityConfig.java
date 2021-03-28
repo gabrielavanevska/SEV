@@ -38,40 +38,16 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/admin/**").hasRole("ADMIN")
                 .anyRequest()
                 .authenticated()
-//                .and()
-//                .formLogin()
-//                .loginPage("/auth/login").permitAll()
-//                .failureUrl("/auth/login?error=BadCredentials")
-//                .defaultSuccessUrl("/home", true)
                 .and()
                 .x509()
                 .subjectPrincipalRegex("CN=(.*?)(?:,|$)")
                 .userDetailsService(this.userService);
-//                .and()
-//                .logout()
-//                .logoutUrl("/auth/logout")
-//                .clearAuthentication(true)
-//                .invalidateHttpSession(true)
-//                .deleteCookies("JSESSIONID")
-//                .logoutSuccessUrl("/auth/login");
-//                .and()
-//                .exceptionHandling().accessDeniedPage("/access_denied");
-
     }
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) {
         auth.authenticationProvider(authenticationProvider);
     }
-
-//    @Override
-//    protected void configure(HttpSecurity http) throws Exception {
-//        http.authorizeRequests().anyRequest().authenticated()
-//                .and()
-//                .x509()
-//                .subjectPrincipalRegex("CN=(.*?)(?:,|$)")
-//                .userDetailsService(userDetailsService());
-//    }
 
     @Bean
     public UserDetailsService userDetailsService() {

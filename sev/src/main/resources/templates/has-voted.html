@@ -18,7 +18,7 @@
         <div class="col-lg-4 col-10">
             <div class="tm-brand-container">
                 <div class="tm-brand-texts">
-                    <h1 class="text-uppercase tm-brand-name" onclick="location.href='formular.html'">VOTE</h1>
+                    <h1 class="text-uppercase tm-brand-name" onclick="location.href='/vote'">VOTE</h1>
                 </div>
             </div>
         </div>
@@ -71,15 +71,10 @@
         </div>
     </div>
 
-
-
     <section class="row tm-pt-4 tm-pb-6">
         <div class="col-12 tm-page-cols-container">
             <div class="tm-page-col-right">
-                <th:block th:each="candidate : ${candidates}">
-                    <p th:text="${candidate.getFirstName()} + ${candidate.getLastName()}"></p>
-                    <p th:text="${candidate.getNumberOfVotes()}"></p>
-                </th:block>
+                <h3 style="color:red">You can only vote once.</h3>
             </div>
         </div>
     </section>
@@ -92,10 +87,8 @@
         </p>
     </footer>
 </div>
-<script src="js/jquery.min.js"></script>
-<script src="js/parallax.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/parallax.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
 </body>
 </html>
-
-

@@ -25,6 +25,9 @@ public class User implements UserDetails {
 
     private String email;
 
+    @Column(name = "has_voted")
+    private Boolean hasVoted;
+
 
     private boolean isAccountNonExpired = true;
     private boolean isAccountNonLocked = true;
@@ -45,6 +48,7 @@ public class User implements UserDetails {
         this.password = password;
         this.role = role;
         this.email= email;
+        this.hasVoted = false;
     }
 
     public String getEmail() {
@@ -110,5 +114,13 @@ public class User implements UserDetails {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public Boolean getHasVoted() {
+        return hasVoted;
+    }
+
+    public void setHasVoted(Boolean hasVoted) {
+        this.hasVoted = hasVoted;
     }
 }
