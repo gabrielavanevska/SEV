@@ -15,8 +15,5 @@ public class CreateTestUsers {
         this.userService = userService;
     }
 
-    @PostConstruct
-    public void createTestUser() {
-        this.userService.register("test", "test", "test", "test", Role.ROLE_VOTER);
-    }
+
 }

@@ -22,8 +22,8 @@ public class UserServiceImpl implements UserService {
 
 
     @Override
-    public User register(String embg, String password, String firstName, String lastName, Role role) {
-        User user = new User(embg, firstName, lastName, this.passwordEncoder.encode(password), role);
+    public User register(String embg, String password, String firstName, String lastName, Role role, String email) {
+        User user = new User(embg, firstName, lastName, this.passwordEncoder.encode(password), role, email);
         return userRepository.save(user);
     }
 

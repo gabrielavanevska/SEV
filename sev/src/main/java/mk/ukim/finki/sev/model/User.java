@@ -23,6 +23,8 @@ public class User implements UserDetails {
 
     private String password;
 
+    private String email;
+
 
     private boolean isAccountNonExpired = true;
     private boolean isAccountNonLocked = true;
@@ -36,15 +38,22 @@ public class User implements UserDetails {
     public User() {
     }
 
-    public User(String username, String firstName, String lastName, String password, Role role) {
+    public User(String username, String firstName, String lastName, String password, Role role, String email) {
         this.username = username;
         this.firstName = firstName;
         this.lastName = lastName;
         this.password = password;
         this.role = role;
+        this.email= email;
     }
 
+    public String getEmail() {
+        return email;
+    }
 
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

@@ -5,5 +5,5 @@ import mk.ukim.finki.sev.model.User;
 import org.springframework.security.core.userdetails.UserDetailsService;
 
 public interface UserService extends UserDetailsService {
-    User register(String embg, String password, String firstName, String lastName, Role role);
+    User register(String embg, String password, String firstName, String lastName, Role role, String email);
 }
