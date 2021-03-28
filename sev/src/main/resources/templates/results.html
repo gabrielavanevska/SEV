@@ -78,6 +78,7 @@
             <div class="tm-page-col-right">
                 <th:block th:each="candidate : ${candidates}">
                     <p th:text="${candidate.getFirstName()} + ${candidate.getLastName()}"></p>
+                    <p>Number of votes:</p>
                     <p th:text="${candidate.getNumberOfVotes()}"></p>
                 </th:block>
             </div>
@@ -92,9 +93,9 @@
         </p>
     </footer>
 </div>
-<script src="js/jquery.min.js"></script>
-<script src="js/parallax.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/parallax.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
 </body>
 </html>
 
