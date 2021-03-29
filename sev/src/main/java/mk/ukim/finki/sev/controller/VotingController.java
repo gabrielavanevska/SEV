@@ -48,7 +48,7 @@ public class VotingController {
         String username = principal.getName();
 
         User user = this.userRepository.findByUsername(username).get();
-        System.out.println(user.getUsername());
+
         if(!user.getHasVoted()) {
             Candidate candidate = this.candidateRepository.findById(Long.parseLong(vote)).get();
             candidate.setNumberOfVotes(candidate.getNumberOfVotes() + 1);
